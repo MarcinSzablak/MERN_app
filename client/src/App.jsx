@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <NavBar></NavBar>
-      <TestUser></TestUser>
+      {/* <TestUser></TestUser> */}
     </>
   )
 }
