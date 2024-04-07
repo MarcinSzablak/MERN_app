@@ -20,7 +20,7 @@ function Slider() {
         images.map((image)=>{
             return(
             <Carousel.Item
-                key={images.Id}
+                key={image.Id}
                 >
                 <img
                     className="slide-img"
