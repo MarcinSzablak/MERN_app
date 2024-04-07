@@ -6,8 +6,11 @@ import Container from 'react-bootstrap/Container';
 function NavBar() {
   const links = [
     {Id:1, Name: "About us", Link: "#AboutUs"},
-    {Id:2, Name: "Menu", Link: "#Menu"},
-    {Id:3, Name: "News", Link: "#News"}
+    {Id:2, Name: "Restaurants", Link: "#Restaurants"},
+    {Id:3, Name: "Menu", Link: "#Menu"},
+    {Id:4, Name: "News", Link: "#News"},
+    {Id:5, Name: "Galary", Link: "#Galary"},
+    {Id:6, Name: "Contact", Link: "#Contact"}
   ]
 
   return (

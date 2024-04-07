@@ -3,33 +3,33 @@ import Carousel from 'react-bootstrap/Carousel';
 import Container from 'react-bootstrap/Container';
 
 function Slider() {
+//
+    const images = [
+        {Id: 1, Src:"kebabSlider1.jpeg"},
+        {Id: 2, Src:"kebabSlider2.jpeg"},
+        {Id: 3, Src:"kebabSlider3.jpeg"}
+    ]
 
   return (
-    <Container>
-        <Carousel>
-            <Carousel.Item interval={1000}>
-                <img className="slider-img" src='./slider/kebabSlider1.jpeg'/>
-                <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Carousel.Caption>
+    <Carousel
+        className='slide'
+        controls={false}
+        indicators={false}
+        interval={4000}>
+    {
+        images.map((image)=>{
+            return(
+            <Carousel.Item
+                key={images.Id}
+                >
+                <img
+                    className="slide-img"
+                    src={"./slider/"+ image.Src}/>
             </Carousel.Item>
-            <Carousel.Item interval={1000}>
-                <img className="slider-img" src='./slider/kebabSlider2.jpeg'/>
-                <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item interval={1000}>
-                <img className="slider-img" src='./slider/KebabSlider3.jpeg'/>
-                <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-        </Carousel>
-    </Container>
+            )
+        })
+    }
+    </Carousel>
   )
 }
 
