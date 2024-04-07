@@ -20,9 +20,9 @@ function NavBar() {
       className='NavBar'
       data-bs-theme="dark"
     >
-        <Navbar.Brand href="#Home" className='Brand'><img
-            alt=""
-            src="/kebab-transformed.png"
+        <Navbar.Brand href="#Home" className='brand'><img
+            alt="logo"
+            src="/logo.png"
             width="30"
             height="30"
             className="d-inline-block align-top"

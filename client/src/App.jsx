@@ -1,9 +1,10 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './components/mainPage/NavBar'
+import './components/NavBar'
 import TestUser from './components/TestUser';
-import NavBar from './components/mainPage/NavBar';
+import NavBar from './components/NavBar';
 import Slider from './components/mainPage/Slider';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
     <>
       <NavBar></NavBar>
       <Slider></Slider>
+      <Footer></Footer>
       {/* <TestUser></TestUser> */}
     </>
   )
