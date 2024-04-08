@@ -15,7 +15,7 @@ function Slider() {
         className='slide'
         controls={false}
         indicators={false}
-        interval={4000}>
+        interval={2000}>
     {
         images.map((image)=>{
             return(

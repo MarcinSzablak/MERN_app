@@ -25,7 +25,7 @@ function NavBar() {
         <Navbar.Brand href="#Home" className='brand-navbar'><img
             alt="logo"
             src="/logo.png"
-            width="30"
+            width="33"
             height="30"
             className="d-inline-block align-top"
         />{' '}
