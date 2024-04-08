@@ -13,6 +13,8 @@ function NavBar() {
     {Id:6, Name: "Contact", Link: "#Contact"}
   ]
 
+  //zmienić nazwe KebabSlider
+
   return (
     <Navbar
       variant='pills'
@@ -20,7 +22,7 @@ function NavBar() {
       className='NavBar'
       data-bs-theme="dark"
     >
-        <Navbar.Brand href="#Home" className='brand'><img
+        <Navbar.Brand href="#Home" className='brand-navbar'><img
             alt="logo"
             src="/logo.png"
             width="30"
