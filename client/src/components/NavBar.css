@@ -1,6 +1,8 @@
 .NavBar{
     background-color: var(--green);
-    height: 200%;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
 }
 .brand-navbar{
     margin-left: 2.5%;

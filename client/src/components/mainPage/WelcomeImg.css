@@ -1,0 +1,44 @@
+:root{
+    --about-us-img-height:650px;
+}
+
+
+.main-welcome-img{
+    width: 100%;
+    height: var(--about-us-img-height);
+}
+
+.main-welcome-img img{
+    width: 100%;
+    height: 100%;
+}
+
+.welcome-img-text-box{
+    position: absolute;
+    height: var(--about-us-img-height);
+    width: 50%;
+}
+
+.welcome-img-flex-box{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.welcome-img-text-box h1, h2{
+
+}
+
+.welcome-img-text-box h1{
+    font-size: 54px;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 900;
+    color: var(--yellow);
+    -webkit-text-stroke: 2px var(--red);
+    text-transform: uppercase;
+}
+
+.welcome-img-text-box h2{
+
+}
