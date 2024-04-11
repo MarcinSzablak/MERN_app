@@ -8,24 +8,20 @@ const PORT = 8080;
 app.use(cors());
 app.use(express.json());
 
-const myDataBase = "myDB";
+const myDataBase = "main";
 const url = `mongodb://localhost:27017/${myDataBase}`;
 mongoose.connect(url)
     .then(()=>console.log("Connected to MongoDB"))
     .catch((err)=>console.log("Connection Error:", err.message));
 
-const userSchema = new mongoose.Schema({
-    name: String,
-    email: String,
-    age: Number,
-});
+const db = mongoose.connection
 
-const User = mongoose.model("User", userSchema);
+const Cienkie = db.collection("cienkie")
 
-app.get("/api/users", async(req, res)=>{
+app.get("/api/Cienkie", async(req, res)=>{
     try{
-        const users = await User.find({});
-        res.json(users);
+        const cienkie = await Cienkie.find({}).toArray();
+        res.json(cienkie);
     }   
     catch(err){
         res.status((500).json({message: err.message}));

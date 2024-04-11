@@ -10,6 +10,7 @@ function WelcomeImg(){
           <h2>Najlepszy Kebab w Olsztynie!</h2>
         </div>
       </div>
+      <div className="welcome-img-darker-img"></div>
       <img src="./slider/kebabSlider1.jpeg"/>
     </div>
   )
