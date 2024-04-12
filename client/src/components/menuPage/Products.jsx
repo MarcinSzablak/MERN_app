@@ -18,7 +18,7 @@ function Products(){
   
             const data = await res.json();
             setProductsList(data);
-            console.log(productsList);
+           // console.log(productsList);
   
         }catch(err){
             console.log("error: ", err);
@@ -27,7 +27,17 @@ function Products(){
 
     return(
         <>
-        da
+            {
+                productsList.map((product)=>{
+                    return(
+                        <div>
+                            {product.Name}
+                            {product.Ingridients[0]}
+                            <img src="http://localhost:8080/images/kebab_to_database.png"/>
+                        </div>
+                    )
+                })
+            }
         </>
     )
 }

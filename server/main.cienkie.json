@@ -1,0 +1,103 @@
+[{
+  "_id": {
+    "$oid": "6617df3d73051b8ce3229a3b"
+  },
+  "Name": "Classic",
+  "Price": [
+    {
+      "Small": 13
+    },
+    {
+      "Medium": 17
+    },
+    {
+      "Big": 23
+    }
+  ],
+  "Ingridients": [
+    "Surówki",
+    "Papryka",
+    "Ogórek",
+    "Marchew",
+    "Sosy"
+  ],
+  "Img": "logo.png"
+},
+{
+  "_id": {
+    "$oid": "6617df3d73051b8ce3229a3c"
+  },
+  "Name": "Friess",
+  "Price": [
+    {
+      "Small": 15
+    },
+    {
+      "Medium": 19
+    },
+    {
+      "Big": 25
+    }
+  ],
+  "Ingridients": [
+    "Surówki",
+    "Papryka",
+    "Ogórek",
+    "Marchew",
+    "Sosy",
+    "Frytki"
+  ],
+  "Img": "logo.png"
+},
+{
+  "_id": {
+    "$oid": "6617df3d73051b8ce3229a3d"
+  },
+  "Name": "Indian",
+  "Price": [
+    {
+      "Small": 15
+    },
+    {
+      "Medium": 19
+    },
+    {
+      "Big": 25
+    }
+  ],
+  "Ingridients": [
+    "Surówki",
+    "Papryka",
+    "Ogórek",
+    "Marchew",
+    "Sosy",
+    "Ryż"
+  ],
+  "Img": "logo.png"
+},
+{
+  "_id": {
+    "$oid": "6617df3d73051b8ce3229a3e"
+  },
+  "Name": "Falafel",
+  "Price": [
+    {
+      "Small": 15
+    },
+    {
+      "Medium": 19
+    },
+    {
+      "Big": 25
+    }
+  ],
+  "Ingridients": [
+    "Surówki",
+    "Papryka",
+    "Ogórek",
+    "Marchew",
+    "Sosy",
+    "Falafel"
+  ],
+  "Img": "logo.png"
+}]
