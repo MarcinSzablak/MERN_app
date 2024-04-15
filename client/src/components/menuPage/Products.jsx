@@ -26,7 +26,7 @@ function Products(){
     }
 
     return(
-        <>
+        <div>
             {
                 productsList.map((product)=>{
                     return(
@@ -38,7 +38,7 @@ function Products(){
                     )
                 })
             }
-        </>
+        </div>
     )
 }
 
