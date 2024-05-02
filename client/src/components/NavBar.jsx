@@ -8,9 +8,8 @@ function NavBar() {
     {Id:1, Name: "About us", Link: "#AboutUs"},
     {Id:2, Name: "Restaurants", Link: "#Restaurants"},
     {Id:3, Name: "Menu", Link: "#Menu"},
-    {Id:4, Name: "News", Link: "#News"},
-    {Id:5, Name: "Galary", Link: "#Galary"},
-    {Id:6, Name: "Contact", Link: "#Contact"}
+    {Id:4, Name: "Promotions", Link: "#Promotions"},
+    {Id:5, Name: "Contact", Link: "#Contact"},
   ]
 
   //zmienić nazwe KebabSlider
