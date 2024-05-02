@@ -6,11 +6,11 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: var(--red);
+    background-color: var(--green);
     color: var(--white);
 }
 
-.main-text{
+.about-us-main-page-text{
     width: 50%;
     text-align: center;
 }

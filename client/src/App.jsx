@@ -7,6 +7,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import WelcomeImg from './components/mainPage/WelcomeImg';
 import AboutUsMainPage from './components/mainPage/AboutUsMainPage';
+import TopDishes from './components/mainPage/TopDishes';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       <div style={{paddingTop:'56px'}}></div>
       <WelcomeImg></WelcomeImg>
       <AboutUsMainPage></AboutUsMainPage>
+      <TopDishes></TopDishes>
       {/* <Slider></Slider> */}
       <Footer></Footer>
       {/* <TestUser></TestUser> */}
