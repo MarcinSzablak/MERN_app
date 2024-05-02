@@ -7,13 +7,14 @@ function TestUser() {
 
     const fetchData = async () => {
         try{
-            const res = await fetch("http://localhost:8080/api/users", {method: "GET"});
+            const res = await fetch("http://localhost:8080/api/Cienkie", {method: "GET"});
             if(!res.ok){
                 throw new Error(`network response was not ok: ${res.status}`)
             }
 
             const data = await res.json();
-            setUsersList(data)
+            await setUsersList(data)
+            console.log(usersList)
 
         }catch(err){
             console.log("error: ", err);
@@ -29,11 +30,7 @@ function TestUser() {
                 {
                     usersList.map((user)=>{
                         return(
-                            <li key={user._id}>
-                                imie: {user.name},
-                                email: {user.email},
-                                age: {user.age}
-                            </li>
+                            <p>user</p>
                         )
                     })
                 }

@@ -10,8 +10,6 @@ import AboutUsMainPage from './components/mainPage/AboutUsMainPage';
 import TopDishes from './components/mainPage/TopDishes';
 
 function App() {
-
-
   return (
     <>
       <NavBar></NavBar>
@@ -21,7 +19,7 @@ function App() {
       <TopDishes></TopDishes>
       {/* <Slider></Slider> */}
       <Footer></Footer>
-      {/* <TestUser></TestUser> */}
+
     </>
   )
 }
