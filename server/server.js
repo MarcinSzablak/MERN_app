@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')))
 
-const myDataBase = "main";
+const myDataBase = "Main";
 const url = `mongodb://localhost:27017/${myDataBase}`;
 mongoose.connect(url)
     .then(()=>console.log("Connected to MongoDB"))
@@ -18,13 +18,23 @@ mongoose.connect(url)
 
 const db = mongoose.connection
 
-const Cienkie = db.collection("cienkie")
+const Kebabs = db.collection("Kebabs")
 
-app.get("/api/Cienkie", async(req, res)=>{
+app.get("/api/Kebabs", async(req, res)=>{
     try{
-        const cienkie = await Cienkie.find({}).toArray();
-        res.json(cienkie);
-    }   
+        const kebabs = await Kebabs.find({}).toArray();
+        res.json(kebabs);
+    }
+    catch(err){
+        res.status((500).json({message: err.message}));
+    }
+});
+
+app.get("/api/TopKebabs", async(req, res)=>{
+    try{
+        const kebabs = await Kebabs.find().sort({"popularnosc": -1}).limit(3).toArray();
+        res.json(kebabs);
+    }
     catch(err){
         res.status((500).json({message: err.message}));
     }

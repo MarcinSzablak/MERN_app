@@ -3,4 +3,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1.5%;
+}
+.top-dishes-box{
+    display: flex;
+}
+.dish-box p{
+    position: absolute;
 }
