@@ -8,6 +8,34 @@
 .top-dishes-box{
     display: flex;
 }
-.dish-box p{
+.dish-box{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 20vw;
+    height: 15vh;
+}
+.dish-box-text{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     position: absolute;
+    background-color: rgba(123, 200, 55, 0.75);
+    width: 10vw;
+    height: 17vh;
+    border-radius: 1vw;
+    padding: 0.5vw;
+    opacity: 0%;
+    transition: opacity ease-in-out 100ms;
+}
+.dish-box:hover .dish-box-text{
+    opacity: 100%;
+}
+
+.dish-box-text p{
+    margin: 0;
+}
+.dish-box img{
+    width: 50%;
 }

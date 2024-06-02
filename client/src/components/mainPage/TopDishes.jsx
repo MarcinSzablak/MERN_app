@@ -31,7 +31,13 @@ function TopDishes() {
           productsList.map( (product) =>{
             return(
               <div key={product.id} className='dish-box'>
-                <p>{product.wCzym}, {product.mieso}, {product.sos}, {product.rozmiar}, {product.cena}</p>
+                <div className='dish-box-text'>
+                  <p>w czym: {product.wCzym}</p>
+                  <p>mięso: {product.mieso}</p>
+                  <p>sos: {product.sos}</p>
+                  <p>rozmiar: {product.rozmiar}</p>
+                  <p>cena: {product.cena}zł</p>
+                </div>
                 <img src={"http://localhost:8080/images/"+product.img} />
               </div>
             )
