@@ -15,7 +15,6 @@ function App() {
       <WelcomeImg></WelcomeImg>
       <AboutUsMainPage></AboutUsMainPage>
       <TopDishes></TopDishes>
-      {/* <Slider></Slider> */}
       <Footer></Footer>
 
     </>
