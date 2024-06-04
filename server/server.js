@@ -19,6 +19,8 @@ mongoose.connect(url)
 const db = mongoose.connection
 
 const Kebabs = db.collection("Kebabs")
+const Admins = db.collection("Admins")
+
 
 app.get("/api/Kebabs", async(req, res)=>{
     try{
@@ -34,6 +36,16 @@ app.get("/api/TopKebabs", async(req, res)=>{
     try{
         const kebabs = await Kebabs.find().sort({"popularnosc": -1}).limit(3).toArray();
         res.json(kebabs);
+    }
+    catch(err){
+        res.status((500).json({message: err.message}));
+    }
+});
+
+app.get("/api/GetAdmins", async(req, res)=>{
+    try{
+        const admins = await Admins.find().toArray();
+        res.json(admins);
     }
     catch(err){
         res.status((500).json({message: err.message}));
