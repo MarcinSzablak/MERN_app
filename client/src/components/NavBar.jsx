@@ -2,6 +2,7 @@ import './NavBar.css';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
+import { useCookies } from 'react-cookie';
 
 function NavBar() {
   const links = [
@@ -13,6 +14,7 @@ function NavBar() {
     {Id:6, Name: "Admin", Link: "Admin"},
   ]
 
+  const [cookie] = useCookies(["admin"]);
   //zmienić nazwe KebabSlider
 
   return (
@@ -41,6 +43,7 @@ function NavBar() {
               )
             })
           }
+          {cookie.admin!=null ? <Nav.Link href="AdminPanel">AdminPanel</Nav.Link> : null}
         </Nav>
     </Navbar>
   )

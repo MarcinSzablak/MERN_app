@@ -5,11 +5,15 @@ import './Admin.css'
 
 import { useState, useEffect } from 'react';
 import { Alert, Button } from 'bootstrap';
+import { useCookies } from 'react-cookie';
 
 function Admin() {
   const [admins, setAdmins] = useState([]);
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+
+  const [cookie, setCookie, removeCookie] = useCookies(["admin"]);
+
 
   const fetchData = async () => {
     try{
@@ -30,11 +34,12 @@ function Admin() {
     fetchData()
     admins.forEach( admin => {
       if(name != admin.name || password != admin.password){
-        alert("Wrong name or password!!!")
         return
       }
       else{
-
+        setCookie("admin", {"id":admin.id, "name":name, "password":password},{ path:"/" })
+        window.open("/AdminPanel","_self")
+        return
       }
     })
   }
