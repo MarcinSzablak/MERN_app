@@ -18,7 +18,6 @@ function Products(){
 
             const data = await res.json();
             setProductsList(data);
-           // console.log(productsList);
 
         }catch(err){
             console.log("error: ", err);
@@ -26,11 +25,11 @@ function Products(){
     }
 
     return(
-        <div>
+        <div className="product-list">
             {
                 productsList.map((product)=>{
                     return(
-                        <div>
+                        <div className="product-list-component">
                             <img src="http://localhost:8080/images/kebab_to_database.png"/>
                         </div>
                     )

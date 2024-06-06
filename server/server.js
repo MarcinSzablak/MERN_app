@@ -52,6 +52,18 @@ app.get("/api/GetAdmins", async(req, res)=>{
     }
 });
 
+app.delete("/api/Kebabs/:id", async(req, res)=>{
+    try{
+        const objectToDelete = await Model.deleteOne({id: req.myId})
+        if(objectToDelete.deletedCount === 0){
+            return res.status(404).json({message: "Doc not found"})
+        }
+    }
+    catch(err){
+        res.status((500).json({message: err.message}));
+    }
+});
+
 app.listen(PORT, ()=>console.log(`Server express is running on ${PORT}`));
 
 process.on('SIGINT', ()=>{

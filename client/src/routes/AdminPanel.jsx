@@ -1,6 +1,7 @@
 import './AdminPanel.css';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
+import Products from '../components/menuPage/Products';
 
 function AdminPanel() {
   return (
@@ -8,6 +9,7 @@ function AdminPanel() {
         <NavBar></NavBar>
         <div className='admin-panel-main'>
             <p>AdminPanel</p>
+            <Products></Products>
         </div>
         <Footer></Footer>
     </>

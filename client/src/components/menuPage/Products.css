@@ -1,0 +1,19 @@
+.product-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.product-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1%;
+    width: 100%;
+}
+.product-list-component{
+    width: 20%;
+}
+.product-list-component img{
+    width: 100%;
+}
