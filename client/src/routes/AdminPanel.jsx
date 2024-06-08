@@ -8,7 +8,6 @@ function AdminPanel() {
     <>
         <NavBar></NavBar>
         <div className='admin-panel-main'>
-            <p>AdminPanel</p>
             <Products></Products>
         </div>
         <Footer></Footer>
