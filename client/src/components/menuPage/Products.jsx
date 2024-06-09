@@ -1,40 +1,14 @@
 import "./Products.css";
 import { useState, useEffect } from 'react';
-
+import { fetchData, deleteData, modifyOneData } from "../serversConectionHelpers/serverFunctions";
 
 function Products(){
     const [productsList, setProductsList] = useState([]);
 
     useEffect(() => {
-        fetchData()
+        fetchData(setProductsList, "http://localhost:8080/api/Kebabs")
     },[]);
 
-    const fetchData = async () => {
-        try{
-            const res = await fetch("http://localhost:8080/api/Kebabs", {method: "GET"});
-            if(!res.ok){
-                throw new Error(`network response was not ok: ${res.status}`)
-            }
-
-            const data = await res.json();
-            setProductsList(data);
-
-        }catch(err){
-            console.log("error: ", err);
-        }
-    }
-
-    const deleteData = async (id) =>{
-        try{
-            const res = await fetch(`http://localhost:8080/api/Kebabs/${id}`, {method: "DELETE"})
-            if(!res.ok){
-                throw new Error(`network response was not ok: ${res.status}`)
-            }
-        }catch(err){
-            console.log("error: ", err);
-        }
-        fetchData()
-    }
 
     return(
         <div className="product-list">
@@ -43,16 +17,17 @@ function Products(){
                     return(
                         <div key={product.id} className="product-list-component">
                             <div className="product-info">
-                                <p>id: {product.id}</p>
-                                <p>wCzym: {product.wCzym}</p>
-                                <p>mieso: {product.mieso}</p>
-                                <p>sos: {product.sos}</p>
-                                <p>dodatki: {product.dodatki}</p>
-                                <p>cena: {product.cena}</p>
-                                <p>rozmiar: {product.rozmiar}</p>
-                                <p>popularnosc: {product.popularnosc}</p>
+                                <p>id: <input type="Number" defaultValue={product.id}></input></p>
+                                <p>wCzym: <input defaultValue={product.wCzym}></input></p>
+                                <p>mieso: <input defaultValue={product.mieso}></input></p>
+                                <p>sos: <input defaultValue={product.sos}></input></p>
+                                <p>dodatki: <input defaultValue={product.dodatki}></input></p>
+                                <p>cena: <input type="Number" defaultValue={product.cena}></input></p>
+                                <p>rozmiar: <input defaultValue={product.rozmiar}></input></p>
+                                <p>popularnosc: <input defaultValue={product.popularnosc}></input></p>
                                 <p>img: {product.img}</p>
-                                <button onClick={ () => deleteData(product.id)}>usuń</button>
+                                <button onClick={ () => deleteData(product.id, setProductsList)}>usuń</button>
+                                <button onClick={ () => modifyOneData(product, setProductsList)}>zapisz</button>
                             </div>
                             <img src="http://localhost:8080/images/kebab_to_database.png"/>
                         </div>

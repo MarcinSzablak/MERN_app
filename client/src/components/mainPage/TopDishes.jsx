@@ -1,27 +1,13 @@
 import './TopDishes.css';
 import { useState, useEffect } from 'react';
+import { fetchData } from '../serversConectionHelpers/serverFunctions';
 
 function TopDishes() {
   const [productsList, setProductsList] = useState([]);
 
   useEffect(() => {
-      fetchData()
+      fetchData(setProductsList, "http://localhost:8080/api/TopKebabs")
   },[]);
-
-  const fetchData = async () => {
-      try{
-          const res = await fetch("http://localhost:8080/api/TopKebabs", {method: "GET"});
-          if(!res.ok){
-              throw new Error(`network response was not ok: ${res.status}`)
-          }
-
-          const data = await res.json();
-          setProductsList(data);
-
-      }catch(err){
-          console.log("error: ", err);
-      }
-  }
 
   return (
     <div className='top-dishes-main'>

@@ -6,6 +6,7 @@ import './Admin.css'
 import { useState, useEffect } from 'react';
 import { Alert, Button } from 'bootstrap';
 import { useCookies } from 'react-cookie';
+import { fetchData } from '../components/serversConectionHelpers/serverFunctions';
 
 function Admin() {
   const [admins, setAdmins] = useState([]);
@@ -14,24 +15,8 @@ function Admin() {
 
   const [cookie, setCookie, removeCookie] = useCookies(["admin"]);
 
-
-  const fetchData = async () => {
-    try{
-        const res = await fetch("http://localhost:8080/api/GetAdmins", {method: "GET"});
-        if(!res.ok){
-            throw new Error(`network response was not ok: ${res.status}`)
-        }
-
-        const data = await res.json();
-        setAdmins(data);
-
-    }catch(err){
-        console.log("error: ", err);
-    }
-  }
-
   const checkLogin = () =>{
-    fetchData()
+    fetchData(setAdmins, "http://localhost:8080/api/GetAdmins")
     admins.forEach( admin => {
       if(name != admin.name || password != admin.password){
         return
@@ -43,7 +28,6 @@ function Admin() {
       }
     })
   }
-
 
   return (
     <>
