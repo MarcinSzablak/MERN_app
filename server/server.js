@@ -4,7 +4,6 @@ const cors = require("cors");
 const path = require("path");
 const {isValidDocument, errorHandler, idValidation} = require("./dataProcessingHelper")
 
-
 const app = express();
 const PORT = 8080;
 
@@ -34,8 +33,6 @@ const schema = new mongoose.Schema({
     popularnosc: {type: Number, required: false},
     img: {type: String, required: false},
 })
-
-
 
 app.get("/api/Kebabs", async(req, res)=>{
     try{
@@ -80,7 +77,7 @@ app.delete("/api/Kebabs/:id", async(req, res)=>{
     res.status(200).json({message: "deleted"})
 });
 
-app.patch(`/api/Kebabs/:id`, async (req,res)=>{
+app.patch(`/api/Kebabs/:id`, cors(), async (req,res)=>{
     try{
         const object = req.body
         if(!isValidDocument(object)){
@@ -103,7 +100,6 @@ app.patch(`/api/Kebabs/:id`, async (req,res)=>{
         errorHandler(res,err)
     }
 })
-
 
 app.listen(PORT, ()=>console.log(`Server express is running on ${PORT}`));
 

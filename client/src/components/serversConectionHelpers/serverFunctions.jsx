@@ -14,7 +14,7 @@ const fetchData = async (setData, link) => {
     }
 }
 
-const deleteData = async (id, setData) =>{
+const deleteData = async (id) =>{
     try{
         const res = await fetch(`http://localhost:8080/api/Kebabs/${id}`, {method: "DELETE"})
         if(!res.ok){
@@ -23,10 +23,9 @@ const deleteData = async (id, setData) =>{
     }catch(err){
         console.log("error: ", err);
     }
-    fetchData(setData)
 }
 
-const modifyOneData = async (object, setData) =>{
+const modifyOneData = async (object) =>{
     try{
         const res = await fetch(`http://localhost:8080/api/Kebabs/${object.id}`, {method: "PATH", body: JSON.stringify(object)})
         if(!res.ok){
@@ -35,7 +34,6 @@ const modifyOneData = async (object, setData) =>{
     }catch(err){
         console.log("error: ", err);
     }
-    fetchData(setData)
 }
 
 export { fetchData, deleteData, modifyOneData }
